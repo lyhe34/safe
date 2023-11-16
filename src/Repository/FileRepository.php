@@ -21,6 +21,13 @@ class FileRepository extends ServiceEntityRepository
         parent::__construct($registry, File::class);
     }
 
+    public function findAllAtPath($path, $owner)
+    {
+        $directory = $this->findOneBy(array('path' => $path, 'owner' => $owner));
+
+        return $this->findBy(array('directory' => $directory, 'owner' => $owner));
+    }
+
 //    /**
 //     * @return File[] Returns an array of File objects
 //     */

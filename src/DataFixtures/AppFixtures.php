@@ -22,23 +22,23 @@ class AppFixtures extends Fixture
         $musics = new Directory();
 
         $root->setName("root");
-        $root->setPath("");
+        $root->setPath("root");
         $root->setOwner($user);
 
         $documents->setName("Documents");
-        $documents->setPath("Documents");
+        $documents->setPath("root/Documents");
         $documents->setOwner($user);
 
         $images->setName("Images");
-        $images->setPath("Documents/Images");
+        $images->setPath("root/Documents/Images");
         $images->setOwner($user);
 
         $videos->setName("Videos");
-        $videos->setPath("Documents/Videos");
+        $videos->setPath("root/Documents/Videos");
         $videos->setOwner($user);
 
         $musics->setName("Musics");
-        $musics->setPath("Documents/Musics");
+        $musics->setPath("root/Documents/Musics");
         $musics->setOwner($user);
 
         $root->addDirectory($documents);

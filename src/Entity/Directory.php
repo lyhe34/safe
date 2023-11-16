@@ -8,7 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: DirectoryRepository::class)]
-class Directory
+class Directory implements \JsonSerializable
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -150,5 +150,10 @@ class Directory
         }
 
         return $this;
+    }
+
+    public function jsonSerialize(): mixed
+    {
+        return ['name' => $this->name, 'path' => $this->path];
     }
 }

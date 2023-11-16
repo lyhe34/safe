@@ -3,7 +3,7 @@ import DirectoryExplorer from "./DirectoryExplorer.jsx";
 import DirectoryContent from "./DirectoryContent.jsx";
 import StorageContextProvider from './StorageContextProvider.jsx';
 
-export default function()
+export default function(props)
 {
     return (
         <StorageContextProvider>
@@ -11,7 +11,7 @@ export default function()
                 <div className="brand">SAFE</div>
             </header>
             <main className="d-flex">
-                <DirectoryExplorer/>
+                <DirectoryExplorer rootDirectories={props.rootDirectories}/>
                 <DirectoryContent/>
             </main>
         </StorageContextProvider>

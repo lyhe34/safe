@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div {{ react_component('Storage') }}></div>
+<div {{ react_component('Storage', {'rootDirectories': rootDirectories, 'rootFiles': rootFiles} ) }}></div>
 {% endblock %}
