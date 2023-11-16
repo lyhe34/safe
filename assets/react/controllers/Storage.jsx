@@ -1,17 +1,12 @@
-import React from 'react';
-import { createContext } from "react";
-import { useState } from 'react';
+import React from "react";
 import DirectoryExplorer from "./DirectoryExplorer.jsx";
 import DirectoryContent from "./DirectoryContent.jsx";
+import StorageContextProvider from './StorageContextProvider.jsx';
 
 export default function()
 {
-    const StorageContext = createContext();
-
-    const [currentDirectory, setCurrentDirectory] = useState();
-
     return (
-        <StorageContext.Provider value={{currentDirectory, setCurrentDirectory}}>
+        <StorageContextProvider>
             <header className="d-flex align-items-center">
                 <div className="brand">SAFE</div>
             </header>
@@ -19,6 +14,6 @@ export default function()
                 <DirectoryExplorer/>
                 <DirectoryContent/>
             </main>
-        </StorageContext.Provider>
+        </StorageContextProvider>
     )
 }

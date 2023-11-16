@@ -22,13 +22,12 @@ class Directory
     private ?string $path = null;
 
     #[ORM\ManyToOne(inversedBy: 'directories')]
-    #[ORM\JoinColumn(nullable: false)]
     private ?User $owner = null;
 
     #[ORM\ManyToOne(targetEntity: self::class, inversedBy: 'directories')]
     private ?self $directory = null;
 
-    #[ORM\OneToMany(mappedBy: 'directory', targetEntity: self::class)]
+    #[ORM\OneToMany(mappedBy: 'directory', targetEntity: self::class, orphanRemoval: true)]
     private Collection $directories;
 
     #[ORM\OneToMany(mappedBy: 'directory', targetEntity: File::class, orphanRemoval: true)]

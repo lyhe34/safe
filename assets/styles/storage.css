@@ -23,9 +23,46 @@ aside
     width: 80%;
 }
 
+.directory-content-current-path
+{
+    color: rgb(156, 156, 156);
+    font-family: "CreatoDisplayItalic";
+}
+
 .brand
 {
-    font-size: 1.25em;
+    font-size: 1.2em;
     font-family: 'Pointless';
     color: white;
+}
+
+.toggle-arrow
+{
+    width: 10px;
+}
+
+.folder-image
+{
+    width: 20px;
+}
+
+.directory-selector
+{
+    cursor: pointer;
+}
+
+.directory-explorer
+{
+    padding: 10px;
+}
+
+.directory-selector-name
+{
+    color: white;
+}
+
+.directory-selector > :nth-child(-n+3)
+{
+    margin-left: 5px;
+    margin-right: 5px;
 }

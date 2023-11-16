@@ -21,6 +21,13 @@ class DirectoryRepository extends ServiceEntityRepository
         parent::__construct($registry, Directory::class);
     }
 
+    public function findAllAtPath($path)
+    {
+        $directory = $this->findOneBy(array('path' => $path));
+
+        return $this->findBy(array('directory' => $directory->getId()));
+    }
+
 //    /**
 //     * @return Directory[] Returns an array of Directory objects
 //     */
